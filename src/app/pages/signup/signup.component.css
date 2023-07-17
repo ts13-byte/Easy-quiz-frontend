@@ -7,8 +7,10 @@
   .full-width{
     width:100%;
   }
-
-  .mat-input-element::placeholder {
-    color: red; /* Replace with your desired color */
+  .custom-card {
+    background-color: #f0f0f0; /* Change this to the desired background color */
+    color: #333; /* Change this to the desired text color */
+    padding: 20px;
   }
+  
   
