@@ -3,12 +3,13 @@
     height: 150px; /* Maintain the aspect ratio by automatically adjusting the height */
     border-radius: 50%; /* Apply a border radius to create rounded corners */
     margin: 10px; /* Set margin around the image */
+   
   }
   .full-width{
     width:100%;
   }
   .custom-card {
-    background-color: #f0f0f0; /* Change this to the desired background color */
+    background-color: #FFEBEE; /* Change this to the desired background color */
     color: #333; /* Change this to the desired text color */
     padding: 20px;
   }

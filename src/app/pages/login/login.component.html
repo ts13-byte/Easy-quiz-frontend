@@ -9,17 +9,18 @@
                     </div>
                
                 <h1 class="text-center">Login with your credentials</h1>
-                <form>
+                
+                <form (ngSubmit)="formSubmit()">
                     <p>
                         <mat-form-field class="full-width" appearance="fill">
                           <mat-label>Username</mat-label>
-                          <input required matInput placeholder="Enter here">
+                          <input [(ngModel)]="loginData.userName" name="userName" required matInput placeholder="Enter here">
                           </mat-form-field>
                     </p>
                     <p>
                         <mat-form-field class="full-width" appearance="fill">
                           <mat-label>Password</mat-label>
-                          <input required matInput placeholder="Enter here" type="password">
+                          <input [(ngModel)]="loginData.password" name="password" required matInput placeholder="Enter here" type="password">
                          </mat-form-field>
                     </p>
                     <div class="container text-center">
