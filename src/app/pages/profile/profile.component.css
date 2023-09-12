@@ -1,0 +1,17 @@
+#my-logo {
+    width: 80px; /* Set the width of the image */
+    height: 80px; /* Maintain the aspect ratio by automatically adjusting the height */
+    border-radius: 50%; /* Apply a border radius to create rounded corners */
+    margin: 10px; /* Set margin around the image */
+   
+  }
+
+  .table{
+   width:100%;
+   border:0.5px solid #ba68c8;
+   color:rgb(69, 4, 4);
+}
+
+.table tr td{
+padding: 20px 50px;
+}
