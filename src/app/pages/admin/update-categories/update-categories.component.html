@@ -1,0 +1,25 @@
+<div style="background-color: #9fa8da;">
+<h1 mat-dialog-title>Update Category</h1>
+<div mat-dialog-content>
+  <form [formGroup]="editCategoryForm" (ngSubmit)="updateCategory()">
+    <mat-form-field class="w100" appearance="outline">
+      <mat-label>Title</mat-label>
+      <!-- Bind the input to the form control -->
+      <input matInput formControlName="title">
+    </mat-form-field>
+
+    <mat-form-field class="w100" appearance="outline">
+      <mat-label>Description</mat-label>
+      <!-- Bind the input to the form control -->
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+  </form>
+</div>
+
+<div mat-dialog-actions>
+  <!-- Add a button to submit the form -->
+  <button mat-button (click)="updateCategory()">Update</button>
+  <!-- Add a button to close the dialog without making changes -->
+  <button mat-button (click)="closeDialog()">Close</button>
+</div>
+</div>

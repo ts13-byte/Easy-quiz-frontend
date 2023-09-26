@@ -1,0 +1,28 @@
+<mat-card style="background-color:#b2dfdb">
+    
+        <h1>
+            Add new Categories
+        </h1>
+<mat-card-content>
+<form (ngSubmit)="formSubmit()">
+    <p>
+        <mat-form-field class="w100" appearance="outline">
+          <mat-label style="color:#880e4f">Title</mat-label>
+          <input name="title" required matInput placeholder="Enter here" style="color:azure" [(ngModel)]="category.title">
+          
+         </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field class="w100" appearance="outline">
+          <mat-label style="color:#880e4f">Description</mat-label>
+          <textarea name="description" matInput placeholder="Enter here" style="color:azure" [(ngModel)]="category.description"></textarea>
+         </mat-form-field>
+    </p>
+    <button mat-raised-button color="primary">Add</button>
+    
+</form>
+
+</mat-card-content>
+        
+</mat-card>
+

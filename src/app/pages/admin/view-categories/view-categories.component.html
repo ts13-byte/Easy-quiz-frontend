@@ -1,0 +1,28 @@
+<mat-card style="background-color: #9fa8da">
+    <mat-list>
+        <h1>
+            All Categories
+        </h1>
+        <mat-list-item *ngFor="let c of categories">
+            
+            <mat-icon matListItemIcon>folder</mat-icon>
+            <h3 matListItemTitle>
+                <span style="display: inline-block; width:700px;">{{c.title}}</span>
+                <button (click)="deleteCategory(c.cid)" mat-icon-button color="accent" style="color:aliceblue;"><mat-icon>delete</mat-icon></button>
+                <button (click)="openDialog(c)" mat-icon-button color="accent" style="color:aliceblue;"><mat-icon>edit</mat-icon></button>
+            </h3>
+
+            <p matListItemLine>
+              <span>{{c.description}}</span>
+            </p>
+            
+            <mat-divider></mat-divider>
+        </mat-list-item>
+        
+    </mat-list>
+    <div class="container text-center">
+        <button routerLink="/admin/add-category" mat-button color="accent" style="margin-bottom: 10px; color:aliceblue">ADD</button>
+        
+        
+    </div>
+</mat-card>

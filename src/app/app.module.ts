@@ -27,6 +27,15 @@ import {MatListModule} from '@angular/material/list';
 import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import {MatTableModule} from '@angular/material/table';
+import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
+import { AddCategoriesComponent } from './pages/admin/add-categories/add-categories.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { UpdateCategoriesComponent } from './pages/admin/update-categories/update-categories.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
+import { AddQuizzesComponent } from './pages/admin/add-quizzes/add-quizzes.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -43,6 +52,12 @@ import {MatTableModule} from '@angular/material/table';
     ProfileComponent,
     SidebarComponent,
     WelcomeComponent,
+    ViewCategoriesComponent,
+    AddCategoriesComponent,
+    UpdateCategoriesComponent,
+    ViewQuizzesComponent,
+    AddQuizzesComponent,
+   
     
 ],
   imports: [
@@ -60,6 +75,10 @@ import {MatTableModule} from '@angular/material/table';
     MatIconModule,
     MatListModule,
     MatTableModule,
+    MatDialogModule,
+    ReactiveFormsModule,
+    MatSlideToggleModule,
+    MatSelectModule
 ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

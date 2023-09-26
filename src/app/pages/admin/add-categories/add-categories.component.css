@@ -1,0 +1,13 @@
+.w100{
+    width:80%;
+}
+
+.action-button {
+    float: right;
+}
+
+.category-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
