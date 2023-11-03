@@ -51,7 +51,7 @@ export class LoginComponent {
               this.router.navigate(['admin']); 
               this.login.loginStatusSubject.next(true);
             }else if(this.login.getUserRole()=="Normal"){
-              this.router.navigate(['user']);
+              this.router.navigate(['user/0']);
               this.login.loginStatusSubject.next(true);
             }else{
               this.login.logOut();

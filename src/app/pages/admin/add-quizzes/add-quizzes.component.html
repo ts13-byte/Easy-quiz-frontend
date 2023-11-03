@@ -1,76 +1,92 @@
-<mat-card style="background-color:#b2dfdb">
-    
-    <h1>
-        Add new Quizzes
-    </h1>
-<mat-card-content>
-<div class="container">
-<div class="row">
-<div class="col-md-8 offset-md-2">
-<form (ngSubmit)="formSubmit()">
+<mat-card style="background-color: #b2dfdb">
+  <h1>Add new Quizzes</h1>
+  <mat-card-content>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <form (ngSubmit)="formSubmit()">
+            <mat-form-field class="w100" appearance="outline">
+              <mat-label style="color: #880e4f">Title</mat-label>
+              <input
+                name="title"
+                required
+                matInput
+                placeholder="Enter here"
+                style="color: azure"
+                [(ngModel)]="quiz.title"
+              />
+            </mat-form-field>
 
-    <mat-form-field class="w100" appearance="outline">
-      <mat-label style="color:#880e4f">Title</mat-label>
-      <input name="title" required matInput placeholder="Enter here" style="color:azure" [(ngModel)]="quiz.title">
-      
-     </mat-form-field>
+            <mat-form-field class="w100" appearance="outline">
+              <mat-label style="color: #880e4f">Description</mat-label>
+              <textarea
+                name="description"
+                matInput
+                placeholder="Enter here"
+                style="color: azure"
+                [(ngModel)]="quiz.description"
+              ></textarea>
+            </mat-form-field>
 
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field class="w100" appearance="outline">
+                  <mat-label style="color: #880e4f">Max Marks</mat-label>
+                  <input
+                    name="maxMarks"
+                    matInput
+                    placeholder="Enter here"
+                    style="color: azure"
+                    [(ngModel)]="quiz.maxMarks"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="w100" appearance="outline">
+                  <mat-label style="color: #880e4f"
+                    >Number Of Questions</mat-label
+                  >
+                  <input
+                    name="numberOfQuestions"
+                    matInput
+                    placeholder="Enter here"
+                    style="color: azure"
+                    [(ngModel)]="quiz.numberOfQuestions"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
 
-    <mat-form-field class="w100" appearance="outline">
-      <mat-label style="color:#880e4f">Description</mat-label>
-      <textarea name="description" matInput placeholder="Enter here" style="color:azure" [(ngModel)]="quiz.description"></textarea>
-     </mat-form-field>
+            <div class="row">
+              <div class="col-md-6">
+                <section class="example-section">
+                  <mat-slide-toggle name="active" [(ngModel)]="quiz.active" 
+                    ><span style="color: #880e4f">
+                      Publish Status</span
+                    ></mat-slide-toggle
+                  >
+                </section>
+              </div>
 
-<div class="row">
-    <div class="col-md-6">
-
-    <mat-form-field class="w100" appearance="outline">
-      <mat-label style="color:#880e4f">Max Marks</mat-label>
-      <input name="maxMarks" matInput placeholder="Enter here" style="color:azure" [(ngModel)]="quiz.maxMarks">
-     </mat-form-field>
-
-</div>
-<div class="col-md-6">
-
-    <mat-form-field class="w100" appearance="outline">
-      <mat-label style="color:#880e4f">Number Of Questions</mat-label>
-      <input name="numberOfQuestions" matInput placeholder="Enter here" style="color:azure" [(ngModel)]="quiz.numberOfQuestions">
-     </mat-form-field>
-
-</div>
-</div>
-
-<div class="row">
-    <div class="col-md-6">
-<section class="example-section">
-    <mat-slide-toggle [(ngModel)]="quiz.active" ><span style="color:#880e4f">
-        Publish Status</span></mat-slide-toggle>
-  </section>
-  </div>
-
-
-  <div class="col-md-6">
-  <mat-form-field class="w100" appearance="outline">
-    <mat-label style="color:#880e4f">Select category</mat-label>
-    <mat-select name="category">
-      <mat-option *ngFor="let c of categories" [value]="c.cid">
-        {{c.title}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-</div>
-</div>
-<div class="container text-center">
-<button mat-raised-button color="accent">Add</button>
-</div>
-</form>
-
-</div>
-</div>
-</div>
-
-</mat-card-content>
-    
+              <div class="col-md-6">
+                <mat-form-field class="w100" appearance="outline">
+                  <mat-label style="color: #880e4f">Select category</mat-label>
+                  <mat-select name="category" [(ngModel)]="quiz.category.cid">
+                    <mat-option *ngFor="let c of categories" [value]="c.cid">
+                      {{ c.title }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="container text-center">
+              <button mat-raised-button color="accent" type="submit">Add</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
 </mat-card>
 
-
+{{quiz | json}}

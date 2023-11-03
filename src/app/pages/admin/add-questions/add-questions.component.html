@@ -1,0 +1,101 @@
+<mat-card style="background-color: #b2dfdb">
+    <h2>Adding Questions to the <span style="color:#880e4f">{{qTitle}} Quiz</span></h2>
+    <mat-card-content>
+      <div class="container">
+        
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+            <form (ngSubmit)="formSubmit()">
+              <div class="container" style="margin-bottom: 5px;">
+                <ckeditor [editor]="Editor" data="<h1>Write your Question here </h1>" name="content" [(ngModel)]="question.content"></ckeditor>
+              </div>
+
+             
+
+            
+
+
+              <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <mat-form-field class="w100" appearance="outline">
+                            <mat-label style="color: #880e4f">Option1</mat-label>
+                            <input
+                              name="option1"
+                              required
+                              matInput
+                              placeholder="Enter here"
+                              style="color: azure"
+                              [(ngModel)]="question.option1"
+                            />
+                          </mat-form-field>
+                    </div>
+
+                    <div class="col-md-6">
+                        <mat-form-field class="w100" appearance="outline">
+                            <mat-label style="color: #880e4f">Option2</mat-label>
+                            <input
+                              name="option2"
+                              required
+                              matInput
+                              placeholder="Enter here"
+                              style="color: azure"
+                              [(ngModel)]="question.option2"
+                            />
+                          </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <mat-form-field class="w100" appearance="outline">
+                            <mat-label style="color: #880e4f">Option3</mat-label>
+                            <input
+                              name="option3"
+                              
+                              matInput
+                              placeholder="Enter here"
+                              style="color: azure"
+                              [(ngModel)]="question.option3"
+                            />
+                          </mat-form-field>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field class="w100" appearance="outline">
+                            <mat-label style="color: #880e4f">Option4</mat-label>
+                            <input
+                              name="option4"
+                             
+                              matInput
+                              placeholder="Enter here"
+                              style="color: azure"
+                              [(ngModel)]="question.option4"
+                            />
+                          </mat-form-field>
+                    </div>
+                </div>
+                <div class="divider">
+                    <mat-form-field class="w100" appearance="outline">
+                        <mat-label style="color: #880e4f">Answer</mat-label>
+                        <mat-select  required [(ngModel)]="question.answer" name="answer">
+                            <mat-option *ngIf="question.option1" [value]="question.option1">{{question.option1}}</mat-option>
+                            <mat-option *ngIf="question.option2" [value]="question.option2">{{question.option2}}</mat-option>
+                            <mat-option *ngIf="question.option3" [value]="question.option3">{{question.option3}}</mat-option>
+                            <mat-option *ngIf="question.option4" [value]="question.option4">{{question.option4}}</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </div>
+            </div>
+  
+             
+              <div class="container text-center">
+                <button mat-raised-button color="accent" type="submit">Add</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  {{question|json}}
+  
+  

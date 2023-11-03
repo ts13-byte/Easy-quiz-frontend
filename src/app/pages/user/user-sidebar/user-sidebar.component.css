@@ -1,0 +1,9 @@
+.word-wrap-container {
+   
+    overflow-wrap: break-word;
+    white-space: normal;
+    padding-top:15px;
+    padding-bottom: 15px;
+      
+  }
+  

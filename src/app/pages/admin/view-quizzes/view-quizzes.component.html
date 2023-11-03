@@ -14,10 +14,11 @@
 </mat-card-content>
 
 <mat-card-actions>
-<button mat-stroked-button color="primary">Go to Questions</button>
+<button [routerLink]="'/admin/view-questions/'+q.qid+'/'+q.title" mat-raised-button color="primary">Go to Questions</button>
 <span style="margin-left:10px;color:#c2185b">Max Marks:{{q.maxMarks}}</span>
 <span style="margin-left:10px;color:#c2185b">Number of Questions:{{q.numberOfQuestions}}</span>
-<button mat-stroked-button style="margin-left:10px" color="primary">Update</button>
+<button (click)="openDialog(q)" mat-flat-button style="margin-left:10px" color="primary">Update</button>
+<button (click)="deleteQuiz(q.qid)"  mat-flat-button style="margin-left:10px" color="warn">Delete</button>
 <button mat-stroked-button style="margin-left:10px" color="primary">Attempts</button>
 </mat-card-actions>
 </mat-card>

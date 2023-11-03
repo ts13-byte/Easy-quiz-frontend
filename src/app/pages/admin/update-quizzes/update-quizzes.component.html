@@ -1,0 +1,79 @@
+<div style="background-color: #9fa8da">
+  <h1 mat-dialog-title>Update Category</h1>
+  <div mat-dialog-content>
+    <form [formGroup]="editCategoryForm" (ngSubmit)="updateQuiz()">
+      <mat-form-field class="w100" appearance="outline">
+        <mat-label>Title</mat-label>
+        <!-- Bind the input to the form control -->
+        <input matInput formControlName="title" />
+      </mat-form-field>
+
+      <mat-form-field class="w100" appearance="outline">
+        <mat-label>Description</mat-label>
+        <!-- Bind the input to the form control -->
+        <textarea matInput formControlName="description"></textarea>
+      </mat-form-field>
+
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field class="w100" appearance="outline">
+            <mat-label style="color: #880e4f">Max Marks</mat-label>
+            <input
+              name="maxMarks"
+              matInput
+              placeholder="Enter here"
+              style="color: azure"
+              formControlName="maxMarks"
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="w100" appearance="outline">
+            <mat-label style="color: #880e4f">Number Of Questions</mat-label>
+            <input
+              name="numberOfQuestions"
+              matInput
+              placeholder="Enter here"
+              style="color: azure"
+              formControlName="numberOfQuestions"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <section class="example-section">
+            <mat-slide-toggle name="active" formControlName="active"
+              ><span style="color: #880e4f">
+                Publish Status</span
+              ></mat-slide-toggle
+            >
+          </section>
+        </div>
+      
+
+      <div class="col-md-6">
+        <mat-form-field class="w100" appearance="outline">
+          <mat-label style="color: #880e4f">Select category</mat-label>
+          <mat-select formControlName="category">
+            <mat-option
+              *ngFor="let category of categories"
+              [value]="category.cid"
+            >
+              {{ category.title }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    </form>
+  </div>
+
+  <div mat-dialog-actions>
+    <!-- Add a button to submit the form -->
+    <button mat-button (click)="updateQuiz()">Update</button>
+    <!-- Add a button to close the dialog without making changes -->
+    <button mat-button (click)="closeDialog()">Close</button>
+  </div>
+  </div>
