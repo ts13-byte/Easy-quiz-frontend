@@ -22,7 +22,7 @@ ngOnInit(){
   console.log(params);
   if(this.catId==0){
     console.log("loading all the quizzes!");
-    this.quizService.quizzes().subscribe(
+    this.quizService.getActiveQuizzes().subscribe(
       (data:any)=>{
           this.quizzes=data;
           console.log(this.quizzes);
@@ -35,7 +35,7 @@ ngOnInit(){
   }
   else{
     console.log("loading the specific quizzes!!");
-    this.quizService.getAllQuizzesOfACategory(this.catId).subscribe(
+    this.quizService.getActiveQuizzesOfCategory(this.catId).subscribe(
       (data:any)=>{
         this.quizzes=data;
         console.log(this.quizzes);

@@ -1,10 +1,7 @@
 <mat-card style="padding-left: 10px; background-color: #f06292; width: 180px">
   <mat-action-list>
-    <div mat-sub-header style="font-size: 18px; color: aliceblue">Menu</div>
-    <button mat-list-item routerLink="/user/0" class="custom-font-size">
-      <mat-icon>home</mat-icon>Home
-    </button>
-
+    <div mat-sub-header style="font-size: 18px; color: aliceblue">Available Categories</div>
+    
     <button mat-list-item routerLink="/user/0"><mat-icon>list</mat-icon> All Quizzes</button>
 
     <button [routerLink]="'/user/'+c.cid" mat-list-item *ngFor="let c of categories">

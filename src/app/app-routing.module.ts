@@ -16,79 +16,88 @@ import { AddQuizzesComponent } from './pages/admin/add-quizzes/add-quizzes.compo
 import { ViewQuestionsComponent } from './pages/admin/view-questions/view-questions.component';
 import { AddQuestionsComponent } from './pages/admin/add-questions/add-questions.component';
 import { LoadQuizzesComponent } from './pages/user/load-quizzes/load-quizzes.component';
+import { PreStartupComponent } from './pages/user/pre-startup/pre-startup.component';
+import { QuizStartComponent } from './pages/user/quiz-start/quiz-start.component';
 
 const routes: Routes = [
   {
-    path:'',
-    component:HomeComponent,
-    pathMatch:'full'
+    path: '',
+    component: HomeComponent,
+    pathMatch: 'full',
   },
   {
-    path:'signup',
-    component:SignupComponent,
-    pathMatch:'full'
+    path: 'signup',
+    component: SignupComponent,
+    pathMatch: 'full',
   },
   {
-    path:'login',
-    component:LoginComponent,
-    pathMatch:'full'
+    path: 'login',
+    component: LoginComponent,
+    pathMatch: 'full',
   },
   {
-    path:'admin',
-    component:DashboardComponent,
-    canActivate:[adminGuard],
-    children:[
+    path: 'admin',
+    component: DashboardComponent,
+    canActivate: [adminGuard],
+    children: [
       {
-        path:'',
-        component:WelcomeComponent,
+        path: '',
+        component: WelcomeComponent,
       },
       {
-        path:'profile',
-        component:ProfileComponent,
+        path: 'profile',
+        component: ProfileComponent,
       },
       {
-        path:'categories',
-        component:ViewCategoriesComponent,
+        path: 'categories',
+        component: ViewCategoriesComponent,
       },
       {
-        path:'add-category',
-        component:AddCategoriesComponent,
+        path: 'add-category',
+        component: AddCategoriesComponent,
       },
       {
-        path:'quizzes',
-        component:ViewQuizzesComponent,
+        path: 'quizzes',
+        component: ViewQuizzesComponent,
       },
       {
-        path:'add-quiz',
-        component:AddQuizzesComponent,
+        path: 'add-quiz',
+        component: AddQuizzesComponent,
       },
       {
-        path:'view-questions/:qid/:title',
-        component:ViewQuestionsComponent,
+        path: 'view-questions/:qid/:title',
+        component: ViewQuestionsComponent,
       },
       {
-        path:'add-questions/:qid/:title',
-        component:AddQuestionsComponent,
-      }
-
+        path: 'add-questions/:qid/:title',
+        component: AddQuestionsComponent,
+      },
     ],
   },
   {
-    path:'user',
-    component:UserDashboardComponent,
+    path: 'user',
+    component: UserDashboardComponent,
     canActivate: [normalGuard],
 
-    children:[
+    children: [
       {
-        path:':catId',
-        component:LoadQuizzesComponent,
-      }
-    ]
-  }
+        path: ':catId',
+        component: LoadQuizzesComponent,
+      },
+      {
+        path: 'instructions/:qid',
+        component: PreStartupComponent,
+      },
+    ],
+  },
+  {
+    path: 'start/:qid',
+    component: QuizStartComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

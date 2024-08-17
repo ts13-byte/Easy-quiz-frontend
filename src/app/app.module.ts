@@ -42,6 +42,11 @@ import { AddQuestionsComponent } from './pages/admin/add-questions/add-questions
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { UserSidebarComponent } from './pages/user/user-sidebar/user-sidebar.component';
 import { LoadQuizzesComponent } from './pages/user/load-quizzes/load-quizzes.component';
+import { PreStartupComponent } from './pages/user/pre-startup/pre-startup.component';
+import { QuizStartComponent } from './pages/user/quiz-start/quiz-start.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MinutesSecondsFormatPipe } from './pages/user/minutes-seconds-format.pipe';
+import { NgxUiLoaderModule, NgxUiLoaderHttpModule } from "ngx-ui-loader";
 
 
 @NgModule({
@@ -68,6 +73,9 @@ import { LoadQuizzesComponent } from './pages/user/load-quizzes/load-quizzes.com
     AddQuestionsComponent,
     UserSidebarComponent,
     LoadQuizzesComponent,
+    PreStartupComponent,
+    QuizStartComponent,
+    MinutesSecondsFormatPipe,
    
     
 ],
@@ -91,6 +99,13 @@ import { LoadQuizzesComponent } from './pages/user/load-quizzes/load-quizzes.com
     MatSlideToggleModule,
     MatSelectModule,
     CKEditorModule,
+    MatProgressSpinnerModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot(
+      {
+        showForeground:true,
+      }
+    ),
 ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
